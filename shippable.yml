@@ -10,3 +10,17 @@ build:
   ci:
     - npm install
     - npm test
+
+integrations:
+  notifications:
+    - integrationName: Shippable-Slack
+      type: slack
+        recipients:
+          - #shippable-tutorials
+        branches:
+          only:
+              - Master
+        on_success: never
+        on_failure: always
+        on_start: never
+        on_pull_request: never
